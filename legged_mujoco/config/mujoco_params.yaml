@@ -1,0 +1,36 @@
+# MuJoCo simulation parameters
+mujoco_model_path: "/home/catkin_ws/src/legged_control/legged_mujoco/models/unitree_a1/scene.xml"
+
+# Control parameters
+delay: 0.0
+control_frequency: 1000.0
+
+# Joint names - URDF naming
+joints:
+  - LF_HAA
+  - LF_HFE
+  - LF_KFE
+  - RF_HAA
+  - RF_HFE
+  - RF_KFE
+  - LH_HAA
+  - LH_HFE
+  - LH_KFE
+  - RH_HAA
+  - RH_HFE
+  - RH_KFE
+
+# IMU configuration  
+imus:
+  base_imu:
+    frame_id: "trunk"
+    orientation_covariance_diagonal: [0.0012, 0.0012, 0.0012]
+    angular_velocity_covariance: [0.0004, 0.0004, 0.0004]
+    linear_acceleration_covariance: [0.01, 0.01, 0.01]
+
+# Contact sensors - URDF naming
+contacts:
+  - LF_FOOT
+  - RF_FOOT
+  - LH_FOOT
+  - RH_FOOT

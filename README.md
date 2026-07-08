@@ -6,6 +6,14 @@
 > [!NOTE]
 > You might be interested in this pipeline with perception, check [legged_perceptive](https://github.com/qiayuanl/legged_perceptive).
 
+## MuJoCo Migration (this fork)
+
+This fork adds a `legged_mujoco` package (not part of the upstream project) that
+ports the same NMPC+WBC control stack from Gazebo to MuJoCo for the Unitree A1,
+including a custom `hardware_interface::RobotHW` implementation
+(`LeggedHWMujoco`) and a debug viewer. All original functionality below is
+unchanged and credited entirely to the upstream authors.
+
 ## Publications
 
 If you use this work in an academic context, please consider citing the following publications:

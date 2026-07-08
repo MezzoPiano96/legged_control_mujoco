@@ -87,7 +87,12 @@ void LeggedController::starting(const ros::Time& time) {
 
   // Set the first observation and command and wait for optimization to finish
   mpcMrtInterface_->setCurrentObservation(currentObservation_);
-  mpcMrtInterface_->getReferenceManager().setTargetTrajectories(target_trajectories);
+  // resetMpcNode (not just setTargetTrajectories) is required here: the MPC
+  // solver object is never destroyed across stop/start cycles of this
+  // ros_control controller, so its warm-start trajectory otherwise survives
+  // from whatever happened right before the previous stop (e.g. a fall) and
+  // corrupts the very first solve after a restart.
+  mpcMrtInterface_->resetMpcNode(target_trajectories);
   ROS_INFO_STREAM("Waiting for the initial policy ...");
   while (!mpcMrtInterface_->initialPolicyReceived() && ros::ok()) {
     mpcMrtInterface_->advanceMpc();

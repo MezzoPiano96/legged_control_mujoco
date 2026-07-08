@@ -49,3 +49,9 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+# Local debug leftovers (this fork)
+*.bak
+*.backup
+*_backup.xml
+legged_mujoco/scripts/MUJOCO_LOG.TXT

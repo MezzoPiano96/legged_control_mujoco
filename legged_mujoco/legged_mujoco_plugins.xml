@@ -1,0 +1,9 @@
+<library path="lib/liblegged_mujoco">
+  <class name="legged_mujoco/LeggedHWMujoco"
+         type="legged::LeggedHWMujoco"
+         base_class_type="hardware_interface::RobotHW">
+    <description>
+      MuJoCo hardware interface for legged robots
+    </description>
+  </class>
+</library>
