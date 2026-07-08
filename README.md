@@ -14,6 +14,15 @@ including a custom `hardware_interface::RobotHW` implementation
 (`LeggedHWMujoco`) and a debug viewer. All original functionality below is
 unchanged and credited entirely to the upstream authors.
 
+- **Running the MuJoCo sim, known gotchas, fall recovery**: see
+  [`legged_mujoco/TROUBLESHOOTING.md`](legged_mujoco/TROUBLESHOOTING.md).
+- **Containerized dev environment** (Ubuntu 20.04 + ROS Noetic + MuJoCo SDK,
+  the one this was built and tested in): see
+  [`docker/README.md`](docker/README.md). Native install still works too —
+  just follow the Installation section below and additionally build
+  `legged_mujoco` (needs the MuJoCo C++ SDK at `/usr/local/mujoco`, see the
+  Docker README for the exact version/steps).
+
 ## Publications
 
 If you use this work in an academic context, please consider citing the following publications:
